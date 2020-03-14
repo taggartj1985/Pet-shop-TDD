@@ -43,7 +43,7 @@ end
 # end
 
 def find_pet_by_name(pets, pet_name)
-for pet in pets[:pets]
+  for pet in pets[:pets]
     if pet[:name] == pet_name
       return pet
     end
@@ -67,9 +67,8 @@ end
 # end
 
 # def remove_pet_by_name(shop, pet_name)
-#   for pets in shop[:pets]
-#   # shop[:name].delete(pet_name)
-#     if pet[:pets] == pet_name
+#   for pet in shop[:pets]
+#     if pet[:name] == pet_name
 #   shop[:pets].delete(pet_name)
 #     end
 #   end
@@ -81,14 +80,16 @@ end
 
 # ^^^^^^^^^^^^^^^^not working yet!
 # I need to access shop[:pet] and compare it to pet[:name] after all that i
-# can try to delete this
+# can try to delete all the info regarding [:pet]
 def remove_pet_by_name(pets, pet_name)
-  for pet in pets[:name]
+  for pet in pets[:pets]
     if pet[:name] == pet_name
-    pet.delete(pet)
+    pets[:pets].delete(pet)
+    p pet
     end
   end
 end
+
 
 def add_pet_to_stock(pet_shop, new_pet)
 pets = pet_shop[:pets]
